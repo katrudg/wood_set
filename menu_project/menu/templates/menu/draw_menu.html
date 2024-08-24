@@ -1,0 +1,16 @@
+<ul>
+    {% for parent, children in menu_dict.items %}
+        <li class="{% if parent.get_absolute_url == active_url %}active{% endif %}">
+            <a href="{{ parent.get_absolute_url }}">{{ parent.name }}</a>
+            {% if children %}
+                <ul>
+                    {% for child in children %}
+                        <li class="{% if child.get_absolute_url == active_url %}active{% endif %}">
+                            <a href="{{ child.get_absolute_url }}">{{ child.name }}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </li>
+    {% endfor %}
+</ul>
