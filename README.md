@@ -1,6 +1,6 @@
 requirements.txt
 
-cd wood_set
+cd menu_project
 
 makemigrations and migrate
 
